@@ -120,12 +120,23 @@
 
     
                                 <p style="animation-delay: 1.14s;"><br></p>
-                                <p style="animation-delay: 1.15s;">Soll es losgehen? Ich freue mich auf deine <a href="imessage://hi@toshi.care" style="color: inherit; text-decoration: underline;">iMessage</a> oder <a href="mailto:hi@toshi.care" style="color: inherit; text-decoration: underline;"> Mail: hi@toshi.care</a> 💫</p>
-     </div>
-
+                                <p style="animation-delay: 1.15s;">Soll es losgehen? Ich freue mich auf deine <span id="toshi-contact"></span> 💫</p>
   <!-- DON’T REMOVE THE FOLLOWING LINES! -->
   <script type="text/javascript">const fs = 5.9;</script>
   <script type="text/javascript" src="https://temper.one/temper-2411.js"></script>
   <script type="text/javascript" src="https://static.getslideframe.com/slideFrame.min.js"></script>
 
+    <script>
+  (function() {
+    var u = 'hi', d = 'toshi.care';
+    var addr = u + '@' + d;
+    var el = document.getElementById('toshi-contact');
+    if (el) {
+      el.innerHTML =
+        '<a href="imessage://' + addr + '" style="color:inherit;text-decoration:underline;">iMessage</a>' +
+        ' oder ' +
+        '<a href="mailto:' + addr + '" style="color:inherit;text-decoration:underline;">Mail: ' + addr + '</a>';
+    }
+  })();
+</script>
 </body>
