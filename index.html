@@ -85,14 +85,25 @@
       margin-top: 0;
     }
   }
-  @keyframes rainbow {
-    0%   { color: hsl(0, 100%, 50%); }
-    100% { color: hsl(360, 100%, 50%); }
+@keyframes rainbow {
+    0%    { color: hsl(0,   100%, 50%); }
+    8%    { color: hsl(30,  80%,  65%); }
+    17%   { color: hsl(60,  100%, 50%); }
+    25%   { color: hsl(90,  75%,  68%); }
+    33%   { color: hsl(120, 100%, 50%); }
+    42%   { color: hsl(150, 80%,  65%); }
+    50%   { color: hsl(180, 100%, 50%); }
+    58%   { color: hsl(210, 75%,  68%); }
+    67%   { color: hsl(240, 100%, 50%); }
+    75%   { color: hsl(270, 80%,  65%); }
+    83%   { color: hsl(300, 100%, 50%); }
+    92%   { color: hsl(330, 75%,  68%); }
+    100%  { color: hsl(360, 100%, 50%); }
   }
  
   .rainbow {
     -webkit-text-fill-color: unset;
-    animation: rainbow 1.5s linear infinite;
+    animation: rainbow 3s linear infinite;
   }
   </style>
 
