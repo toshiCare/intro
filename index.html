@@ -87,19 +87,15 @@
   }
 
     css
-@keyframes rainbow {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-.rainbow {
-  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow 0.5s linear infinite;
-}
+  @keyframes rainbow {
+    0%   { color: hsl(0, 100%, 50%); }
+    100% { color: hsl(360, 100%, 50%); }
+  }
+ 
+  .rainbow {
+    -webkit-text-fill-color: unset;
+    animation: rainbow 1.5s linear infinite;
+  }
   </style>
 
   
