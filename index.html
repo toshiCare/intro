@@ -85,8 +85,25 @@
       margin-top: 0;
     }
   }
+
+    css
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow 4s linear infinite;
+}
   </style>
 
+  
+  
   <!-- DON'T REMOVE THE FOLLOWING LINE! -->
   <script type="text/javascript">!function(){document.addEventListener("DOMContentLoaded",function(){var _0x1a2a="temper.one",_0x35df=!1,_0x71b1=document.scripts;for(var _0x4e3a=0;_0x4e3a<_0x71b1.length;_0x4e3a++)_0x71b1[_0x4e3a].src.includes(_0x1a2a)&&(_0x35df=!0);if(!_0x35df){var _0x15c2=document.querySelector(".text");_0x15c2&&_0x15c2.remove()}})}();</script>
 
@@ -96,7 +113,7 @@
 
     <h1 style="animation-delay: 0.1s;">Hi, 👋🏼 ich bin Dimitri.</h1>
 
-    <p style="animation-delay: 0.2s;">Seit 2011 unterstütze ich Menschen professionell mit ihren Macs und Apple-Geräten – einige Jahre davon direkt an der Genius Bar. Mit toshiCare möchte ich etwas von der Leidenschaft und Freude weitergeben, die ich mit diesen Geräten verbinde. Dort wo die Menschen sind: zu Hause, am Arbeitsplatz, im Café. Persönlich, verständlich, fast wie unter Freunden – besonders dann, wenn die normalen Wege nicht zum gewünschten Ziel führen.</p>
+    <p style="animation-delay: 0.2s;">Seit 2011 unterstütze ich Menschen professionell mit ihren Macs und Apple-Geräten – einige Jahre davon direkt an der Genius Bar. Mit <span class="rainbow">toshiCare</span> möchte ich etwas von der Leidenschaft und Freude weitergeben, die ich mit diesen Geräten verbinde. Dort wo die Menschen sind: zu Hause, am Arbeitsplatz, im Café. Persönlich, verständlich, fast wie unter Freunden – besonders dann, wenn die normalen Wege nicht zum gewünschten Ziel führen.</p>
 
     <h2 style="animation-delay: 0.3s;">So funktioniert's</h2>
 
