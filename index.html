@@ -249,9 +249,9 @@
     var el = document.getElementById('toshi-contact');
     if (el) {
       el.innerHTML =
-        '<a href="imessage://' + addr + '" style="color:inherit;text-decoration:underline;">iMessage</a>' +
+        '<a href="imessage://' + addr + '" style="color:inherit;text-decoration:none;">iMessage</a>' +
         ' oder ' +
-        '<a href="mailto:' + addr + '" style="color:inherit;text-decoration:underline;">Mail: ' + addr + '</a>';
+        '<a href="mailto:' + addr + '" style="color:inherit;text-decoration:none;">Mail: ' + addr + '</a>';
     }
 
     document.querySelectorAll('.rounded').forEach(function(el) {
