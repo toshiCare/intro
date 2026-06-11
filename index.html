@@ -157,6 +157,278 @@
     75%  { transform: translateY(-2px); }
     100% { transform: translateY(0); }
   }
+  @keyframes phone-swing {
+    0%   { transform: rotate(-45deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes tick-fade {
+    0%   { opacity: 0; transform: translateX(-8px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes shrine-rise {
+    0%   { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes sun-sway {
+    0%   { transform: rotate(-15deg); }
+    50%  { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes smile-tilt {
+    0%   { transform: rotate(30deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes star-spin {
+    0%   { opacity: 0; transform: rotate(-120deg) scale(0.3); }
+    100% { opacity: 1; transform: rotate(0deg) scale(1); }
+  }
+
+  .emoji-wave      { animation: wave        0.8s ease-out both; }
+  .emoji-handshake { animation: handshake   0.6s ease-out both; }
+  .emoji-phone     { animation: phone-swing 0.5s ease-out both; }
+  .emoji-tick      { animation: tick-fade   0.4s ease-out both; }
+  .emoji-shrine    { animation: shrine-rise 0.6s ease-out both; }
+  .emoji-sun       { animation: sun-sway    0.7s ease-out both; }
+  .emoji-smile     { animation: smile-tilt  0.5s ease-out both; }
+  .emoji-star      { animation: star-spin   0.6s ease-out both; }
+
+  </style>
+</head>
+<body>
+  <div class="text">
+
+    <h1>Hi, ich bin Dimitri. <span class="emoji" data-anim="emoji-wave">👋🏼</span></h1>
+
+    <p>Seit 2011 unterstütze ich Menschen professionell mit ihren Macs und Apple-Geräten – einige Zeit davon an der Genius Bar im Apple Store. <br><br>Mit <span class="rounded">toshiCare</span> möchte ich etwas von der Leidenschaft weitergeben, die ich in über 25 Jahren mit Apple-Geräten aufgebaut habe – persönlich, verständlich, fast wie unter Freunden. <span class="emoji" data-anim="emoji-handshake">🤝</span> Und dort helfen, wo alle anderen Wege nicht zum gewünschten Ziel führen.</p>
+
+    <p>Je nachdem was du brauchst, kannst du dich bei <span class="rounded">toshiCare</span> an 3 Serviceformaten orientieren – und bekommst die Hilfe die du brauchst, für deinen Mac, dein iPhone, iPad und alle anderen Apple-Geräte:</p>
+
+    <div class="gap"></div>
+
+    <div class="glass">
+      <p><span class="rounded-xl">Call <span class="emoji" data-anim="emoji-phone">📞</span></span><span class="half-break"></span></p>
+      <p>Kurze Fragen können wir gerne über FaceTime oder FaceTime Audio klären – so kannst du mir auch direkt zeigen, was auf deinem Gerät passiert.</p>
+      <p><br><span class="rounded-lg">12€</span><span class="half-break"></span>pro angefangene 15 Minuten.</p>
+    </div>
+
+    <div class="glass">
+      <p><span class="rounded-xl">Check <span class="emoji" data-anim="emoji-tick">✔️</span></span><span class="half-break"></span></p>
+      <p>Manche Probleme lassen sich nicht telefonisch lösen – in solchen Fällen kann ich zu dir kommen, mir die Situation direkt vor Ort anschauen oder dir zeigen, wie du eine App oder Funktion am besten nutzt.</p>
+      <p><br><span class="rounded-lg">49€</span><span class="half-break"></span>für die erste Stunde,<br>danach 15€ pro angefangene Viertelstunde.</p>
+    </div>
+
+    <div class="glass">
+      <p><span class="rounded-xl">Flow <span class="emoji" data-anim="emoji-shrine">⛩️</span></span><span class="half-break"></span></p>
+      <p>Du hast ein konkretes Ziel – und weißt in etwa was dafür nötig ist? Dann ist das Festpreisformat das richtige für dich – zum Beispiel:</p>
+      <ul>
+        <li>Neues Gerät einrichten oder migrieren</li>
+        <li>Daten sichern, übertragen oder wiederherstellen</li>
+        <li>Workflows optimieren – zum Beispiel mit Shortcuts oder Automationen</li>
+        <li>Hilfe mit Drittanwendungen wie Adobe, Autodesk u.a.</li>
+        <li>...und vieles mehr.</li>
+      </ul>
+      <p><br><span class="rounded-lg">99€</span><span class="half-break"></span>zum Festpreis.<br>Vor Ort, remote oder hybrid.</p>
+    </div>
+
+    <p>Bei trockenem Wetter und innerhalb des Berliner Rings berechne ich keine Anfahrtskosten. <span class="emoji" data-anim="emoji-sun">☀️</span><br><br>Ansonsten: 15€ pro Anfahrt.</p>
+
+    <div class="gap"></div>
+
+    <p>Soll es losgehen? <span class="emoji" data-anim="emoji-smile">🙂</span><br><br>Ich freue mich auf deine <span id="toshi-contact"></span> <span class="emoji" data-anim="emoji-star">💫</span></p>
+
+    <p class="footer">
+      <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a>
+    </p>
+
+  </div>
+
+  <script>
+  (function() {
+    var u = 'hi', d = 'toshi.care';
+    var addr = u + '@' + d;
+    var el = document.getElementById('toshi-contact');
+    if (el) {
+      el.innerHTML =
+        '<a href="imessage://' + addr + '" style="color:inherit;text-decoration:underline;">iMessage</a>' +
+        ' oder ' +
+        '<a href="mailto:' + addr + '" style="color:inherit;text-decoration:underline;">Mail: ' + addr + '</a>';
+    }
+
+    document.querySelectorAll('.rounded').forEach(function(el) {
+      el.addEventListener('click', function() {
+        window.location.href = 'mailto:' + addr;
+      });
+    });
+
+    // 👋🏼 fires on page load
+    var waveEl = document.querySelector('[data-anim="emoji-wave"]');
+    if (waveEl) {
+      window.addEventListener('DOMContentLoaded', function() {
+        waveEl.classList.add('emoji-wave');
+      });
+    }
+
+    // 🤝 fires after 10.02s if visible
+    var handshakeEl = document.querySelector('[data-anim="emoji-handshake"]');
+    if (handshakeEl) {
+      setTimeout(function() {
+        if (handshakeEl.closest('.visible') || handshakeEl.offsetParent !== null) {
+          handshakeEl.classList.add('emoji-handshake');
+        }
+      }, 10020);
+    }
+
+    // 📞 ✔️ ⛩️ fire when glass card is in center of viewport
+    var scrollEmojis = ['emoji-phone', 'emoji-tick', 'emoji-shrine'];
+    var scrollObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.emoji[data-anim]').forEach(function(em) {
+            if (scrollEmojis.indexOf(em.dataset.anim) !== -1) {
+              em.classList.add(em.dataset.anim);
+            }
+          });
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '-30% 0px -30% 0px', threshold: 0 });
+
+    document.querySelectorAll('.glass').forEach(function(card) {
+      scrollObserver.observe(card);
+    });
+
+    // ☀️ 🙂 💫 fire at default scroll visibility
+    var defaultEmojis = ['emoji-sun', 'emoji-smile', 'emoji-star'];
+    var defaultEmojiObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var anim = entry.target.dataset.anim;
+          var idx = defaultEmojis.indexOf(anim);
+          setTimeout(function() {
+            entry.target.classList.add(anim);
+          }, 80 + idx * 1500);
+          defaultEmojiObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    defaultEmojis.forEach(function(anim) {
+      var el = document.querySelector('[data-anim="' + anim + '"]');
+      if (el) defaultEmojiObserver.observe(el);
+    });
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          setTimeout(function() {
+            entry.target.classList.add('visible');
+          }, 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.text p, .text h1, .text h2, .text ul, .glass').forEach(function(el) {
+      observer.observe(el);
+    });
+  })();
+  </script>
+
+</body>
+</html>    to   { filter: hue-rotate(360deg); }
+  }
+
+  .rounded {
+    color: #000;
+    display: inline-block;
+  }
+
+  .rounded:hover {
+    color: hsl(0, 100%, 50%);
+    animation: hue-spin 1.5s linear infinite;
+  }
+
+  /* Spacer between sections */
+  .gap { padding: 3vw 0; }
+
+  /* Bullet list */
+  ul {
+    list-style-type: disc;
+    padding: 2vw 10vw 2vw 10vw;
+    margin: 0;
+  }
+
+  li { padding: 1.5vw 0; }
+
+  /* Footer */
+  .footer {
+    padding: 4vw 3vw;
+    font-size: 2vw;
+    font-weight: 400;
+    opacity: 0.5;
+  }
+  /* Liquid Glass card */
+  .glass {
+    position: relative;
+    margin: 15vw 3vw;
+    padding: 5vw;
+    border-radius: 6vw;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
+
+  .glass::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    border-radius: 6vw 6vw 0 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.0) 100%
+    );
+    pointer-events: none;
+  }
+
+  .glass p, .glass ul {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .glass ul {
+    padding-left: 6vw;
+  }
+
+  .half-break { display: block; height: 3.5vw; }
+
+  /* Emoji animations - fire once */
+  .emoji { display: inline-block; }
+
+  @keyframes wave {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(25deg); }
+    40%  { transform: rotate(-10deg); }
+    60%  { transform: rotate(20deg); }
+    80%  { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes handshake {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-4px); }
+    50%  { transform: translateY(0); }
+    75%  { transform: translateY(-2px); }
+    100% { transform: translateY(0); }
+  }
   
   /* KORREKTUR: Startet waagerecht (-90deg) und dreht sich in die Standardposition (0deg) */
   @keyframes phone-swing {
