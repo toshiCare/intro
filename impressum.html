@@ -4,16 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Impressum – toshiCare</title>
-  
   <meta name="robots" content="noindex, nofollow">
-
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: system-ui;
       background: #ffffff;
@@ -24,20 +21,17 @@
       -webkit-user-select: none;
       user-select: none;
     }
-
     .image-container {
       position: relative;
       width: 100%;
       aspect-ratio: 1 / 1; 
       max-width: 600px;
       margin-bottom: 4vw;
-      
       background-image: url('Impressum – toshiCare.jpg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: top left;
     }
-
     .protection-overlay {
       position: absolute;
       top: 0;
@@ -47,11 +41,10 @@
       background: rgba(0,0,0,0);
       pointer-events: auto;
     }
-
     .back-link {
       margin-top: 4vw;
+      margin-bottom: 6vw;
     }
-
     a {
       color: inherit;
       display: inline-block;
@@ -60,17 +53,31 @@
       -webkit-user-select: auto;
       user-select: auto;
     }
+    .disclaimer {
+      font-size: 2.5vw;
+      line-height: 3.5vw;
+      color: #777777;
+      max-width: 600px;
+      -webkit-user-select: auto;
+      user-select: auto;
+    }
+    @media (min-width: 600px) {
+      .disclaimer {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
   </style>
 </head>
 <body>
-
   <div class="image-container" oncontextmenu="return false;">
     <div class="protection-overlay"></div>
   </div>
-
   <p class="back-link">
     <a href="index.html">← Zurück</a>
   </p>
-
+  <p class="disclaimer">
+    Apple, Mac, iPhone und iPad sind eingetragene Marken von Apple Inc. Die Erwähnung der Marken dient lediglich der Beschreibung der hier angebotenen Dienstleistungen und steht in keiner offiziellen Verbindung zu Apple Inc.
+  </p>
 </body>
 </html>
